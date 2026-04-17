@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-arc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-arc
+  template:
+    metadata:
+      labels:
+        app: hello-arc
+    spec:
+      containers:
+      - name: hello-arc
+        image: nginx
+        ports:
+        - containerPort: 80
